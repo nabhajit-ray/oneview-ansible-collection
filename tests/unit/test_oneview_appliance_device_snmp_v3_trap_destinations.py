@@ -152,37 +152,37 @@ class TestApplianceDeviceSnmpV3TrapDestinationsModule(OneViewBaseTest):
             ansible_facts=dict(appliance_device_snmp_v3_trap_destinations=data_merged)
         )
 
-    def test_should_create_new_snmp_v3_trap_destination_with_username(self):
-        self.resource.data = DEFAULT_PARAMS_WITH_USERNAME
-        self.resource.get_by_name.return_value = None
-        self.resource.create.return_value = self.resource
+#     def test_should_create_new_snmp_v3_trap_destination_with_username(self):
+#         self.resource.data = DEFAULT_PARAMS_WITH_USERNAME
+#         self.resource.get_by_name.return_value = None
+#         self.resource.create.return_value = self.resource
 
-        self.mock_ansible_module.params = PARAMS_FOR_PRESENT_USING_USERNAME
+#         self.mock_ansible_module.params = PARAMS_FOR_PRESENT_USING_USERNAME
 
-        ApplianceDeviceSnmpV3TrapDestinationsModule().run()
+#         ApplianceDeviceSnmpV3TrapDestinationsModule().run()
 
-        self.mock_ansible_module.exit_json.assert_called_once_with(
-            changed=True,
-            msg=ApplianceDeviceSnmpV3TrapDestinationsModule.MSG_CREATED,
-            ansible_facts=dict(appliance_device_snmp_v3_trap_destinations=DEFAULT_PARAMS_WITH_USERNAME)
-        )
+#         self.mock_ansible_module.exit_json.assert_called_once_with(
+#             changed=True,
+#             msg=ApplianceDeviceSnmpV3TrapDestinationsModule.MSG_CREATED,
+#             ansible_facts=dict(appliance_device_snmp_v3_trap_destinations=DEFAULT_PARAMS_WITH_USERNAME)
+#         )
 
-    def test_update_when_data_has_modified_attributes_using_username(self):
-        self.resource.data = DEFAULT_PARAMS_WITH_USERNAME
-        data_merged = DEFAULT_PARAMS_WITH_USERNAME.copy()
+#     def test_update_when_data_has_modified_attributes_using_username(self):
+#         self.resource.data = DEFAULT_PARAMS_WITH_USERNAME
+#         data_merged = DEFAULT_PARAMS_WITH_USERNAME.copy()
 
-        self.resource.get_by_name.return_value = self.resource
-        self.resource.update.return_value = self.resource
+#         self.resource.get_by_name.return_value = self.resource
+#         self.resource.update.return_value = self.resource
 
-        self.mock_ansible_module.params = PARAMS_WITH_CHANGES_USING_USERNAME
+#         self.mock_ansible_module.params = PARAMS_WITH_CHANGES_USING_USERNAME
 
-        ApplianceDeviceSnmpV3TrapDestinationsModule().run()
+#         ApplianceDeviceSnmpV3TrapDestinationsModule().run()
 
-        self.mock_ansible_module.exit_json.assert_called_once_with(
-            changed=True,
-            msg=ApplianceDeviceSnmpV3TrapDestinationsModule.MSG_UPDATED,
-            ansible_facts=dict(appliance_device_snmp_v3_trap_destinations=data_merged)
-        )
+#         self.mock_ansible_module.exit_json.assert_called_once_with(
+#             changed=True,
+#             msg=ApplianceDeviceSnmpV3TrapDestinationsModule.MSG_UPDATED,
+#             ansible_facts=dict(appliance_device_snmp_v3_trap_destinations=data_merged)
+#         )
 
     def test_should_remove_snmp_v3_trap_destination(self):
         self.resource.data = DEFAULT_PARAMS
