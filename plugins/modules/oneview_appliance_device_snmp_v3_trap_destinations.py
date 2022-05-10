@@ -148,10 +148,10 @@ class ApplianceDeviceSnmpV3TrapDestinationsModule(OneViewModule):
         if self.data and self.data.get('userName'):
             username = self.data.pop('userName', None)
 
-            result = self.oneview_client.appliance_device_snmp_v3_users.get_by_name(username)
+            result = self.oneview_client.appliance_device_snmp_v3_users.get_by_name(
+                username)
             if result:
-                result_attr = vars(result)
-                self.data['userId'] = result_attr['data']['id']
+                self.data['userId'] = result.data.get('id')
             else:
                 raise OneViewModuleResourceNotFound(self.MSG_USER_NOT_FOUND)
 
