@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 ###
-# Copyright (2021) Hewlett Packard Enterprise Development LP
+# Copyright (2021) Hewlett Packard Enterprise Development LP1
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # You may not use this file except in compliance with the License.
@@ -148,9 +148,10 @@ class ApplianceDeviceSnmpV3TrapDestinationsModule(OneViewModule):
         if self.data and self.data.get('userName'):
             username = self.data.pop('userName', None)
 
-            result = self.oneview_client.appliance_device_snmp_v3_users.get_by_name(username)
+            result = self.oneview_client.appliance_device_snmp_v3_users.get_by_name(
+                username)
             if result:
-                self.data['userId'] = result[0]['id']
+                self.data['userId'] = result.data.get('id')
             else:
                 raise OneViewModuleResourceNotFound(self.MSG_USER_NOT_FOUND)
 
