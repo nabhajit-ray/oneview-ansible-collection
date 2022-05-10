@@ -89,6 +89,7 @@ jobs:
 
       - name: Setting Python env path
         run: |
+         echo $PYTHONPATH
          echo "PYTHONPATH=/home/runner/work/oneview-ansible-collection:$PYTHONPATH" >> $GITHUB_ENV
 
       - name: Generating coverage report
