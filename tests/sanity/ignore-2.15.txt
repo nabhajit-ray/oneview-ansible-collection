@@ -104,7 +104,6 @@ tests/unit/test_oneview_label.py pylint!skip
 tests/unit/test_oneview_san_manager.py pylint!skip
 tests/unit/test_oneview_sas_interconnect.py pylint!skip
 tests/unit/test_oneview_sas_logical_interconnect.py pylint!skip
-tests/unit/test_oneview_sas_logical_interconnect_group.py pylint!skip
 tests/unit/test_oneview_sas_logical_jbod.py pylint!skip
 tests/unit/test_oneview_scope.py pylint!skip
 tests/unit/test_oneview_server_hardware.py pylint!skip
