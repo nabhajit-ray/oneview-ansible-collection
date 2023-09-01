@@ -1,4 +1,4 @@
-# Ansible Collections for HPE OneView Change Log1qqqqq111
+# Ansible Collections for HPE OneView Change Log1qqqqq111qqqq
 ## v8.5.0
 
 This release extends the planned support of the collections to OneView REST API version 5600(OneView v8.5).
